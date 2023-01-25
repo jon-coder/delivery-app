@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:delivery_app/app/core/config/env/env.dart';
 
 class DeliveryButton extends StatelessWidget {
   final String label;
@@ -22,7 +21,7 @@ class DeliveryButton extends StatelessWidget {
       height: height,
       child: ElevatedButton(
         onPressed: onPressed,
-        child: Text(Env.i['backend_base_url'] ?? ''),
+        child: Text(label),
       ),
     );
   }
