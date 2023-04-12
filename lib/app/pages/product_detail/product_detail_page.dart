@@ -38,136 +38,138 @@ class _ProductDetailPageState extends BaseState<ProductDetailPage, ProductDetail
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DeliveryAppbar(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: context.screenWidth,
-            height: context.percentHeight(.4),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(
-                  widget.product.image,
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: context.screenWidth,
+              height: context.percentHeight(.4),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(
+                    widget.product.image,
+                  ),
+                  fit: BoxFit.cover,
                 ),
-                fit: BoxFit.cover,
               ),
             ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 12.0,
+            const SizedBox(
+              height: 10,
             ),
-            child: Text(
-              widget.product.name,
-              style: context.textStyles.textExtraBold.copyWith(
-                fontSize: 22,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Expanded(
-            child: Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 12.0,
               ),
-              child: SingleChildScrollView(
-                child: Text(
-                  widget.product.description,
-                  style: context.textStyles.textRegular.copyWith(
-                    fontSize: 12,
+              child: Text(
+                widget.product.name,
+                style: context.textStyles.textExtraBold.copyWith(
+                  fontSize: 22,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12.0,
+                ),
+                child: SingleChildScrollView(
+                  child: Text(
+                    widget.product.description,
+                    style: context.textStyles.textRegular.copyWith(
+                      fontSize: 12,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          const Divider(),
-          Row(
-            children: [
-              Container(
-                width: context.percentWidth(.5),
-                height: 68,
-                padding: const EdgeInsets.all(8),
-                child: BlocBuilder<ProductDetailController, int>(
-                  builder: (context, amount) {
-                    return DeliveryIncrementDecrementButton(
-                      amount: amount,
-                      incrementOnTap: () {
-                        controller.increment();
-                      },
-                      decrementOnTap: () {
-                        controller.decrement();
-                      },
-                    );
-                  },
+            const Divider(),
+            Row(
+              children: [
+                Container(
+                  width: context.percentWidth(.5),
+                  height: 68,
+                  padding: const EdgeInsets.all(8),
+                  child: BlocBuilder<ProductDetailController, int>(
+                    builder: (context, amount) {
+                      return DeliveryIncrementDecrementButton(
+                        amount: amount,
+                        incrementOnTap: () {
+                          controller.increment();
+                        },
+                        decrementOnTap: () {
+                          controller.decrement();
+                        },
+                      );
+                    },
+                  ),
                 ),
-              ),
-              Container(
-                width: context.percentWidth(.5),
-                height: 68,
-                padding: const EdgeInsets.all(8),
-                child: BlocBuilder<ProductDetailController, int>(
-                  builder: (context, amount) {
-                    return ElevatedButton(
-                      style: amount == 0
-                          ? ElevatedButton.styleFrom(
-                              backgroundColor: Colors.red,
-                            )
-                          : null,
-                      onPressed: () {
-                        if (amount == 0) {
-                          _showConfirmDelete(amount);
-                        } else {
-                          Navigator.of(context).pop(
-                            OrderProductDto(
-                              product: widget.product,
-                              amount: amount,
-                            ),
-                          );
-                        }
-                      },
-                      child: Visibility(
-                        visible: amount > 0,
-                        replacement: Text(
-                          'Excluir Produto',
-                          style: context.textStyles.textExtraBold,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Adicionar',
-                              style: context.textStyles.textExtraBold.copyWith(
-                                fontSize: 12,
+                Container(
+                  width: context.percentWidth(.5),
+                  height: 68,
+                  padding: const EdgeInsets.all(8),
+                  child: BlocBuilder<ProductDetailController, int>(
+                    builder: (context, amount) {
+                      return ElevatedButton(
+                        style: amount == 0
+                            ? ElevatedButton.styleFrom(
+                                backgroundColor: Colors.red,
+                              )
+                            : null,
+                        onPressed: () {
+                          if (amount == 0) {
+                            _showConfirmDelete(amount);
+                          } else {
+                            Navigator.of(context).pop(
+                              OrderProductDto(
+                                product: widget.product,
+                                amount: amount,
                               ),
-                            ),
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            Expanded(
-                              child: AutoSizeText(
-                                (widget.product.price * amount).currencyPtBR,
-                                style: context.textStyles.textExtraBold,
-                                maxFontSize: 13,
-                                minFontSize: 6,
-                                maxLines: 1,
-                                textAlign: TextAlign.center,
+                            );
+                          }
+                        },
+                        child: Visibility(
+                          visible: amount > 0,
+                          replacement: Text(
+                            'Excluir Produto',
+                            style: context.textStyles.textExtraBold,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Adicionar',
+                                style: context.textStyles.textExtraBold.copyWith(
+                                  fontSize: 12,
+                                ),
                               ),
-                            ),
-                          ],
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              Expanded(
+                                child: AutoSizeText(
+                                  (widget.product.price * amount).currencyPtBR,
+                                  style: context.textStyles.textExtraBold,
+                                  maxFontSize: 13,
+                                  minFontSize: 6,
+                                  maxLines: 1,
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
