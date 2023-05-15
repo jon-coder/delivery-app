@@ -1,3 +1,4 @@
+import 'package:delivery_app/app/core/extensions/formatter_extensions.dart';
 import 'package:flutter/material.dart';
 
 import 'package:delivery_app/app/dto/order_product_dto.dart';
@@ -17,12 +18,13 @@ class OrderProductTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final product = orderProduct.product;
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Row(
         children: [
           Image.network(
-            "http://www.saboresajinomoto.com.br/uploads/images/recipes/sanduiche-de-churrasco.jpg",
+            product.image,
             width: 100,
             height: 100,
             fit: BoxFit.cover,
@@ -34,7 +36,7 @@ class OrderProductTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'X-Burger',
+                    product.name,
                     style: context.textStyles.textRegular.copyWith(
                       fontSize: 16,
                     ),
@@ -43,7 +45,7 @@ class OrderProductTile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '19,90',
+                        (orderProduct.amount * product.price).currencyPtBR,
                         style: context.textStyles.textMedium.copyWith(
                           fontSize: 14,
                           color: context.colors.secondary,
