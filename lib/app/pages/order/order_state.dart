@@ -12,6 +12,7 @@ enum OrderStatus {
   loading,
   loaded,
   error,
+  updateOrder,
 }
 
 class OrderState extends Equatable {
@@ -32,6 +33,8 @@ class OrderState extends Equatable {
         orderProducts = const [],
         paymentTypes = const [],
         errorMessage = null;
+
+  double get totalOrder => orderProducts.fold(0.0, (previousValue, element) => previousValue + element.totalPrice);
 
   @override
   List<Object?> get props => [
