@@ -88,6 +88,10 @@ class _OrderPageState extends BaseState<OrderPage, OrderController> {
               _showConfirmProductDialog(state);
             }
           },
+          emptyBag: () {
+            showInfo('Sacola vazia, selecione um produto para realizar o pedido.');
+            Navigator.pop(context, <OrderProductDto>[]);
+          },
         );
       },
       child: WillPopScope(
@@ -114,7 +118,9 @@ class _OrderPageState extends BaseState<OrderPage, OrderController> {
                           style: context.textStyles.textTitle,
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            controller.emptyBag();
+                          },
                           icon: Image.asset('assets/images/trashRegular.png'),
                         )
                       ],
