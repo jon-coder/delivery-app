@@ -1,7 +1,8 @@
-import 'package:delivery_app/app/pages/auth/login/login_controller.dart';
-import 'package:delivery_app/app/pages/auth/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'login_controller.dart';
+import 'login_page.dart';
 
 class LoginRoute {
   LoginRoute._();
