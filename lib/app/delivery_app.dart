@@ -1,4 +1,5 @@
 import 'package:delivery_app/app/pages/auth/register/register_route.dart';
+import 'package:delivery_app/app/pages/order/order_completed_page.dart';
 import 'package:delivery_app/app/pages/order/order_route.dart';
 import 'package:delivery_app/app/pages/product_detail/product_detail_route.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class DeliveryApp extends StatelessWidget {
           '/auth/login': (context) => LoginRoute.page,
           '/auth/register': (context) => RegisterRoute.page,
           '/order': (context) => OrderRoute.page,
+          '/order/completed': (context) => const OrderCompletedPage(),
         },
       ),
     );
