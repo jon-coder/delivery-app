@@ -1,9 +1,9 @@
 import 'dart:developer';
-
-import 'package:delivery_app/app/core/exceptions/repository_exception.dart';
-import 'package:delivery_app/app/core/rest_client/custom_dio.dart';
-import 'package:delivery_app/app/models/product_model.dart';
 import 'package:dio/dio.dart';
+
+import '../../core/exceptions/repository_exception.dart';
+import '../../core/rest_client/custom_dio.dart';
+import '../../models/product_model.dart';
 
 import './products_repository.dart';
 
