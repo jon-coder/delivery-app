@@ -1,7 +1,8 @@
-import 'package:delivery_app/app/dto/order_product_dto.dart';
-import 'package:delivery_app/app/models/product_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:match/match.dart';
+
+import '../../dto/order_product_dto.dart';
+import '../../models/product_model.dart';
 
 part 'home_state.g.dart';
 

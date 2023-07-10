@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:delivery_app/app/core/ui/base_state/base_state.dart';
-import 'package:delivery_app/app/pages/home/home_controller.dart';
-import 'package:delivery_app/app/pages/home/home_state.dart';
-import 'package:delivery_app/app/pages/home/widgets/delivery_product_tile.dart';
-import 'package:delivery_app/app/pages/home/widgets/shopping_bag_widget.dart';
-
-import 'package:delivery_app/app/core/ui/widgets/delivery_appbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../core/ui/base_state/base_state.dart';
+import '../../core/ui/widgets/delivery_appbar.dart';
+
+import 'home_controller.dart';
+import 'home_state.dart';
+import 'widgets/delivery_product_tile.dart';
+import 'widgets/shopping_bag_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -1,12 +1,13 @@
-import 'package:delivery_app/app/dto/order_product_dto.dart';
-import 'package:delivery_app/app/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
-
-import 'package:delivery_app/app/core/extensions/formatter_extensions.dart';
-import 'package:delivery_app/app/core/ui/styles/colors_app.dart';
-import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
-import 'package:delivery_app/app/models/product_model.dart';
 import 'package:provider/provider.dart';
+
+import '../../../core/extensions/formatter_extensions.dart';
+import '../../../core/ui/styles/colors_app.dart';
+import '../../../core/ui/styles/text_styles.dart';
+import '../../../dto/order_product_dto.dart';
+import '../../../models/product_model.dart';
+
+import '../home_controller.dart';
 
 class DeliveryProductTile extends StatelessWidget {
   final ProductModel product;
