@@ -1,16 +1,17 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:delivery_app/app/core/extensions/formatter_extensions.dart';
-import 'package:delivery_app/app/core/ui/base_state/base_state.dart';
-import 'package:delivery_app/app/core/ui/widgets/delivery_increment_decrement_button.dart';
-import 'package:delivery_app/app/dto/order_product_dto.dart';
-import 'package:delivery_app/app/models/product_model.dart';
-import 'package:delivery_app/app/pages/product_detail/product_detail_controller.dart';
 import 'package:flutter/material.dart';
-
-import 'package:delivery_app/app/core/ui/helpers/size_extensions.dart';
-import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
-import 'package:delivery_app/app/core/ui/widgets/delivery_appbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../core/extensions/formatter_extensions.dart';
+import '../../core/ui/base_state/base_state.dart';
+import '../../core/ui/helpers/size_extensions.dart';
+import '../../core/ui/styles/text_styles.dart';
+import '../../core/ui/widgets/delivery_appbar.dart';
+import '../../core/ui/widgets/delivery_increment_decrement_button.dart';
+import '../../dto/order_product_dto.dart';
+import '../../models/product_model.dart';
+
+import 'product_detail_controller.dart';
 
 class ProductDetailPage extends StatefulWidget {
   final ProductModel product;
