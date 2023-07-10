@@ -34,6 +34,45 @@ class _ProductDetailPageState extends BaseState<ProductDetailPage, ProductDetail
     controller.initial(amount, widget.order != null);
   }
 
+  void _showConfirmDelete(int amount) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Deseja Excluir o Produto?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text(
+                'Cancelar',
+                style: context.textStyles.textBold.copyWith(
+                  color: Colors.red,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.of(context).pop(
+                  OrderProductDto(
+                    product: widget.product,
+                    amount: amount,
+                  ),
+                );
+              },
+              child: Text(
+                'Confirmar',
+                style: context.textStyles.textBold.copyWith(),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -171,45 +210,6 @@ class _ProductDetailPageState extends BaseState<ProductDetailPage, ProductDetail
           ],
         ),
       ),
-    );
-  }
-
-  void _showConfirmDelete(int amount) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Deseja Excluir o Produto?'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text(
-                'Cancelar',
-                style: context.textStyles.textBold.copyWith(
-                  color: Colors.red,
-                ),
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-                Navigator.of(context).pop(
-                  OrderProductDto(
-                    product: widget.product,
-                    amount: amount,
-                  ),
-                );
-              },
-              child: Text(
-                'Confirmar',
-                style: context.textStyles.textBold.copyWith(),
-              ),
-            ),
-          ],
-        );
-      },
     );
   }
 }
