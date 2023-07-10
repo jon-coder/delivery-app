@@ -1,7 +1,9 @@
-import 'package:delivery_app/app/core/config/env/env.dart';
-import 'package:delivery_app/app/core/rest_client/interceptors/auth_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/native_imp.dart';
+
+import '../config/env/env.dart';
+
+import 'interceptors/auth_interceptor.dart';
 
 class CustomDio extends DioForNative {
   late AuthInterceptor _authInterceptor;

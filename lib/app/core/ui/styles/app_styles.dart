@@ -1,6 +1,7 @@
-import 'package:delivery_app/app/core/ui/styles/colors_app.dart';
-import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
 import 'package:flutter/material.dart';
+
+import 'colors_app.dart';
+import 'text_styles.dart';
 
 class AppStyles {
   static AppStyles? _instance;
