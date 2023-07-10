@@ -1,12 +1,13 @@
-import 'package:delivery_app/app/core/extensions/formatter_extensions.dart';
-import 'package:delivery_app/app/pages/order/order_controller.dart';
 import 'package:flutter/material.dart';
-
-import 'package:delivery_app/app/dto/order_product_dto.dart';
-import 'package:delivery_app/app/core/ui/styles/colors_app.dart';
-import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
-import 'package:delivery_app/app/core/ui/widgets/delivery_increment_decrement_button.dart';
 import 'package:provider/provider.dart';
+
+import '../../../core/extensions/formatter_extensions.dart';
+import '../../../core/ui/styles/colors_app.dart';
+import '../../../core/ui/styles/text_styles.dart';
+import '../../../core/ui/widgets/delivery_increment_decrement_button.dart';
+import '../../../dto/order_product_dto.dart';
+
+import '../order_controller.dart';
 
 class OrderProductTile extends StatelessWidget {
   final int index;

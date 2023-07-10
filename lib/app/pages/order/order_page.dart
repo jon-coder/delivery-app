@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:validatorless/validatorless.dart';
 
-import 'package:delivery_app/app/core/extensions/formatter_extensions.dart';
-import 'package:delivery_app/app/core/ui/base_state/base_state.dart';
-import 'package:delivery_app/app/core/ui/widgets/delivery_button.dart';
-import 'package:delivery_app/app/models/payment_type_model.dart';
-import 'package:delivery_app/app/pages/order/order_controller.dart';
-import 'package:delivery_app/app/pages/order/order_state.dart';
-import 'package:delivery_app/app/pages/order/widgets/order_field.dart';
-import 'package:delivery_app/app/pages/order/widgets/payment_types_field.dart';
-import 'package:delivery_app/app/dto/order_product_dto.dart';
-import 'package:delivery_app/app/pages/order/widgets/order_product_tile.dart';
-import 'package:delivery_app/app/core/ui/widgets/delivery_appbar.dart';
-import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
+import '../../core/extensions/formatter_extensions.dart';
+import '../../core/ui/base_state/base_state.dart';
+import '../../core/ui/styles/text_styles.dart';
+import '../../core/ui/widgets/delivery_appbar.dart';
+import '../../core/ui/widgets/delivery_button.dart';
+import '../../dto/order_product_dto.dart';
+import '../../models/payment_type_model.dart';
+
+import 'order_controller.dart';
+import 'order_state.dart';
+import 'widgets/order_field.dart';
+import 'widgets/payment_types_field.dart';
+import 'widgets/order_product_tile.dart';
 
 class OrderPage extends StatefulWidget {
   const OrderPage({Key? key}) : super(key: key);

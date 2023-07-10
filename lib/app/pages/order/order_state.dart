@@ -1,8 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:delivery_app/app/dto/order_product_dto.dart';
-import 'package:delivery_app/app/models/payment_type_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:match/match.dart';
+
+import '../../dto/order_product_dto.dart';
+import '../../models/payment_type_model.dart';
 
 part 'order_state.g.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:delivery_app/app/core/ui/helpers/size_extensions.dart';
-import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
-import 'package:delivery_app/app/core/ui/widgets/delivery_button.dart';
+import '../../core/ui/helpers/size_extensions.dart';
+import '../../core/ui/styles/text_styles.dart';
+import '../../core/ui/widgets/delivery_button.dart';
 
 class OrderCompletedPage extends StatelessWidget {
   const OrderCompletedPage({super.key});

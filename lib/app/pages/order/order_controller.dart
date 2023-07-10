@@ -1,10 +1,11 @@
 import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
-import 'package:delivery_app/app/dto/order_dto.dart';
-import 'package:delivery_app/app/dto/order_product_dto.dart';
-import 'package:delivery_app/app/pages/order/order_state.dart';
-import 'package:delivery_app/app/repositories/order/order_repository.dart';
+
+import '../../dto/order_dto.dart';
+import '../../dto/order_product_dto.dart';
+import '../../repositories/order/order_repository.dart';
+
+import 'order_state.dart';
 
 class OrderController extends Cubit<OrderState> {
   final OrderRepository _orderRepository;

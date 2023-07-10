@@ -1,8 +1,9 @@
-import 'package:delivery_app/app/core/ui/helpers/size_extensions.dart';
-import 'package:delivery_app/app/core/ui/styles/text_styles.dart';
-import 'package:delivery_app/app/models/payment_type_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_awesome_select/flutter_awesome_select.dart';
+
+import '../../../core/ui/helpers/size_extensions.dart';
+import '../../../core/ui/styles/text_styles.dart';
+import '../../../models/payment_type_model.dart';
 
 class PaymentTypesField extends StatelessWidget {
   final List<PaymentTypeModel> paymentTypes;
