@@ -1,14 +1,14 @@
-import 'package:delivery_app/app/pages/auth/register/register_route.dart';
-import 'package:delivery_app/app/pages/order/order_completed_page.dart';
-import 'package:delivery_app/app/pages/order/order_route.dart';
-import 'package:delivery_app/app/pages/product_detail/product_detail_route.dart';
 import 'package:flutter/material.dart';
 
-import 'package:delivery_app/app/core/provider/application_binding.dart';
-import 'package:delivery_app/app/core/ui/theme/theme_config.dart';
-import 'package:delivery_app/app/pages/home/home_route.dart';
-import 'package:delivery_app/app/pages/auth/login/login_route.dart';
-import 'package:delivery_app/app/pages/splash/splash_page.dart';
+import 'core/provider/application_binding.dart';
+import 'core/ui/theme/theme_config.dart';
+import 'pages/home/home_route.dart';
+import 'pages/auth/login/login_route.dart';
+import 'pages/auth/register/register_route.dart';
+import 'pages/order/order_completed_page.dart';
+import 'pages/order/order_route.dart';
+import 'pages/product_detail/product_detail_route.dart';
+import 'pages/splash/splash_page.dart';
 
 class DeliveryApp extends StatelessWidget {
   const DeliveryApp({super.key});
